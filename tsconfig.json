@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
       "outDir": "dist",
+      "typeRoots": ["./src/@types"],
       "sourceMap": true,
       "noImplicitAny": true,
       "esModuleInterop": true,

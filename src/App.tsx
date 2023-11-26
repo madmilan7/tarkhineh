@@ -1,10 +1,13 @@
 import React from "react";
 import "./css/main.css";
 
+// Components
+import Home from "./pages/Home";
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-red-600">سلام</h1>
+      <Home />
     </div>
   );
 };

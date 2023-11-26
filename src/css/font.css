@@ -1,6 +1,6 @@
 @font-face {
     font-family: Estedad-Black;
-    src: url("../assets/fonts/Estedad-Black.ttf") format("truetype");
+    src: url("../assets/fonts/Estedad-SemiBold.ttf") format("truetype");
 }
 @font-face {
     font-family: Estedad-Bold;
@@ -13,8 +13,4 @@
 @font-face {
     font-family: Estedad-Regular;
     src: url("../assets/fonts/Estedad-Regular.ttf") format("truetype");
-}
-@font-face {
-    font-family: Estedad-Thin;
-    src: url("../assets/fonts/Estedad-Thin.ttf") format("truetype");
 }
