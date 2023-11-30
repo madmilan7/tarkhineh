@@ -5,8 +5,32 @@
 @import url("./font.css");
 
 @layer base {
-    html {
-      font-family: Estedad-Medium;
-      scroll-behavior: smooth;
-    }
+  html {
+    font-family: Estedad-Medium;
+    scroll-behavior: smooth;
   }
+}
+
+/* Customize Swiper */
+.swiper-pagination-bullet-active {
+  --swiper-pagination-color: #417f56;
+  --swiper-pagination-bullet-size: 16px;
+  border: 2px solid #e5f2e9;
+}
+.swiper-pagination-bullet {
+  --swiper-pagination-bullet-inactive-color: #adadad;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 2px;
+}
+.swiper-pagination-bullets {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-pagination {
+  z-index: 11 !important;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0 !important;
+  right: 0;
+}

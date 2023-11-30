@@ -10,7 +10,7 @@ module.exports = {
       tint_4: "#96C9A7",
       tint_5: "#7CBC91",
       tint_6: "#61AE7B",
-      tint_7: "#4E9968", 
+      tint_7: "#4E9968",
       primary: "#417F56",
       shade_1: "#396F4B",
       shade_2: "#315F41",
@@ -38,8 +38,7 @@ module.exports = {
       warning: "#A9791C",
       warning_light: "#F4B740",
       warning_extralight: "#FFF8E1",
-    }
+    },
   },
   plugins: [],
-}
-
+};
