@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.tsx", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        "about": "420px",
+        "344": "344px"
+      }
+    },
     colors: {
       tint_1: "#E5F2E9",
       tint_2: "#CAE4D3",

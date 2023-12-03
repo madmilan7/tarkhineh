@@ -9,6 +9,12 @@
     font-family: Estedad-Medium;
     scroll-behavior: smooth;
   }
+  h1, h2 {
+    font-family: Estedad-Bold;
+  }
+  p {
+    font-family: Estedad-Regular;
+  }
 }
 
 /* Customize Swiper */
