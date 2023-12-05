@@ -4,6 +4,7 @@ import React from "react";
 import Navbar from "../ui/Navbar";
 import Slider from "../components/Slider";
 import HomeSections from "../components/HomeSections";
+import Footer from "../ui/Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Navbar />
       <Slider />
       <HomeSections />
+      <Footer />
     </div>
   );
 };

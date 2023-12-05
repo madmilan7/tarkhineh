@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        "about": "420px",
-        "344": "344px"
+        about: "420px",
+        344: "344px",
+      },
+      margin: {
+        add: "205px"
       }
     },
     colors: {
@@ -43,6 +46,7 @@ module.exports = {
       warning: "#A9791C",
       warning_light: "#F4B740",
       warning_extralight: "#FFF8E1",
+      transparent: "transparent",
     },
   },
   plugins: [],

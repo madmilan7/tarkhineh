@@ -12,7 +12,7 @@
   h1, h2 {
     font-family: Estedad-Bold;
   }
-  p {
+  p, ::placeholder {
     font-family: Estedad-Regular;
   }
 }
