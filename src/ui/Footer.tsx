@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
             <div className="py-4">
               <textarea
-                className="bg-transparent border border-gray_7 rounded placeholder:text-gray_1
+                className="bg-transparent border border-gray_7 rounded placeholder:text-gray_1 resize-none
                             px-4 pt-3 w-80 h-full placeholder:text-sm placeholder:absolute placeholder:top-3"
                 placeholder="پیام شما"
                 onChange={handleTextChange}
