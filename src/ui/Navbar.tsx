@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // icons
 import logo from "../assets/icons/Logo.svg";
@@ -6,8 +6,11 @@ import search from "../assets/icons/search-normal.svg";
 import user from "../assets/icons/user.svg";
 import cart from "../assets/icons/shopping-cart.svg";
 import arrow from "../assets/icons/arrow-down.svg";
+import Login from "./Login";
 
 const Navbar = () => {
+  const [showLogin, setShowLogin] = useState<boolean>(false);
+
   return (
     <div className="flex items-center justify-between bg-white h-24 mx-24">
       {/* logo */}
@@ -34,11 +37,25 @@ const Navbar = () => {
       {/* login & search & cart */}
       <div>
         <div className="flex items-center gap-1.5">
-          <img className="bg-tint_1 p-2 w-10 h-10 rounded" src={search} alt="جستجو" />
-          <img className="bg-tint_1 p-2 w-10 h-10 rounded" src={cart} alt="سبدخرید" />
-          <img className="bg-tint_1 p-2 w-10 h-10 rounded" src={user} alt="ورود / ثبت نام" />
+          <img
+            className="bg-tint_1 p-2 w-10 h-10 rounded"
+            src={search}
+            alt="جستجو"
+          />
+          <img
+            className="bg-tint_1 p-2 w-10 h-10 rounded cursor-pointer"
+            src={cart}
+            alt="سبدخرید"
+          />
+          <img
+            className="bg-tint_1 p-2 w-10 h-10 rounded cursor-pointer"
+            src={user}
+            alt="ورود / ثبت نام"
+            onClick={() => {setShowLogin(true)}}
+          />
         </div>
       </div>
+      {showLogin && <Login setShowLogin={setShowLogin} />}
     </div>
   );
 };

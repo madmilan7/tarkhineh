@@ -6,6 +6,11 @@ module.exports = {
       height: {
         about: "420px",
         344: "344px",
+        20: "20rem"
+      },
+      width: {
+        26: "26rem",
+        22: "22.9rem"
       },
       margin: {
         add: "205px"

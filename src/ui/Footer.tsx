@@ -6,6 +6,8 @@ import footer from "../assets/images/Footer.png";
 import telegram from "../assets/icons/Footer icons(1).svg";
 import instagram from "../assets/icons/Footer icons(2).svg";
 import twiter from "../assets/icons/Footer icons.svg";
+// Function
+import { toPersian } from "../utils/helper";
 
 const Footer = () => {
   const maxi: number = 200;
@@ -16,12 +18,6 @@ const Footer = () => {
     if (value.length <= maxi) {
       setText(value);
     }
-  };
-  const toPersian = (num: number) => {
-    const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-    return num
-      .toString()
-      .replace(/\d/g, (match: string) => persianDigits[parseInt(match)]);
   };
 
   return (
