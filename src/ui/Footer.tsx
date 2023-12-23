@@ -7,7 +7,7 @@ import telegram from "../assets/icons/Footer icons(1).svg";
 import instagram from "../assets/icons/Footer icons(2).svg";
 import twiter from "../assets/icons/Footer icons.svg";
 // Function
-import { toPersian } from "../utils/helper";
+import { toPersian } from "../utils/toPersian";
 
 const Footer = () => {
   const maxi: number = 200;
