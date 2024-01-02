@@ -4,17 +4,23 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        about: "420px",
-        344: "344px",
-        20: "20rem"
+        "about": "420px",
+        "344": "344px",
+        "20rem": "20rem",
+        "card": "10rem"
       },
       width: {
-        26: "26rem",
-        22: "22.9rem"
+        "26rem": "26rem",
+        "22rem": "22.9rem",
+        "card": "42.3rem",
+        "169": "169px"
       },
       margin: {
-        add: "205px"
-      }
+        "add": "205px"
+      },
+      flex: {
+        "1.5": "1.5 1.5 0"
+      },
     },
     colors: {
       tint_1: "#E5F2E9",

@@ -47,7 +47,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
       {/* Login 1 */}
       <div
         className="bg-white flex flex-col items-center z-20 fixed top-0 bottom-0 right-0 left-0 
-                        m-auto h-20 w-26 border border-gray_4 rounded-lg px-6 py-6"
+                        m-auto h-20rem w-26rem border border-gray_4 rounded-lg px-6 py-6"
       >
         <img src={logo} alt="ترخینه" className="w-28" />
         <img
@@ -77,7 +77,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
             type="number"
             className={`border  ${
               errors.number ? `border-error` : `border-gray_8`
-            } w-22 h-10 rounded px-1 outline-none`}
+            } w-22rem h-10 rounded px-1 outline-none`}
             {...register("number", {
               required: true,
               minLength: 11,
@@ -115,7 +115,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
       {showConfirm && (
         <div
           className="bg-white z-20 fixed top-0 bottom-0 right-0 left-0
-                        m-auto h-20 w-26 border border-gray_4 rounded-lg px-6 py-6"
+                        m-auto h-20rem w-26rem border border-gray_4 rounded-lg px-6 py-6"
         >
           <div>
             <img
