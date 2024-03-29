@@ -17,10 +17,12 @@ interface Input {
 
 interface ShowLogin {
   setShowLogin: any;
+  loggedInCart: any;
 }
 
-const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
+const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
   const [showConfirm, setShowConfirm] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [number, setNumber] = useState<string>();
 
   const {
@@ -40,6 +42,11 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
   const comeBack = () => {
     setShowConfirm(false);
   };
+
+  const handleIsLoggedIn = (value: boolean) => {
+    setIsLoggedIn(value);
+    loggedInCart(true);
+  }
 
   return (
     <div className="absolute top-0 right-0">
@@ -136,7 +143,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin }) => {
           <p className="text-sm text-gray_7 pt-1 text-center pb-6">
             کد تایید پنج‌رقمی به شماره {"۰" + toPersian(+number)} ارسال شد.
           </p>
-          <OtpInput setShowLogin={setShowLogin} valueLength={5} />
+          <OtpInput setShowLogin={setShowLogin} valueLength={5} loggedIn={handleIsLoggedIn} />
         </div>
       )}
     </div>

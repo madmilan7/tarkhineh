@@ -59,3 +59,21 @@
   left: 0 !important;
   right: 0;
 }
+
+/* width */
+.scrollbar::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #757575;
+  border-radius: 5px;
+  max-height: 300px;
+  min-height: 50px;
+}

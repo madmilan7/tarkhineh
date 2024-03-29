@@ -16,9 +16,10 @@ interface OtpType {
 interface Prop {
   setShowLogin: any;
   valueLength: number;
+  loggedIn: any;
 }
 
-const OtpInput: React.FC<Prop> = ({ setShowLogin, valueLength }) => {
+const OtpInput: React.FC<Prop> = ({ setShowLogin, valueLength, loggedIn }) => {
   const [otp, setOtp] = useState<string[]>(new Array(valueLength).fill(""));
   const [seconds, setSeconds] = useState<number>(120);
   const otpInputs = useRef([]);
@@ -37,6 +38,7 @@ const OtpInput: React.FC<Prop> = ({ setShowLogin, valueLength }) => {
 
   const onSubmit: SubmitHandler<OtpType> = () => {
     setShowLogin(false);
+    loggedIn(true);
   };
 
   useEffect(() => {

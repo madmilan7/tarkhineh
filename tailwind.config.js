@@ -7,13 +7,17 @@ module.exports = {
         "about": "420px",
         "344": "344px",
         "20rem": "20rem",
-        "card": "10rem"
+        "card": "10rem",
+        "554": "554px",
+        "32rem": "32.3rem"
       },
       width: {
         "26rem": "26rem",
         "22rem": "22.9rem",
         "card": "42.3rem",
-        "169": "169px"
+        "169": "169px",
+        "704": "704px",
+        "37.5rem": "37.5rem"
       },
       margin: {
         "add": "205px"
@@ -21,6 +25,18 @@ module.exports = {
       flex: {
         "1.5": "1.5 1.5 0"
       },
+      keyframes: {
+        down: {
+          "0%": {top: "-100%"},
+          "100%": {top: "-112px"}
+        }
+      },
+      animation: {
+        "uptodown": "down 1s .3s ease"
+      },
+      boxShadow: {
+        "bank": " 0 0 5px #7CBC91"
+      }
     },
     colors: {
       tint_1: "#E5F2E9",

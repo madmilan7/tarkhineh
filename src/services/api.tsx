@@ -9,4 +9,9 @@ const fetchProducts = async () => {
   return data;
 };
 
-export default fetchProducts;
+const getProduct = async (id: any) => {
+  const { data } = await client.get(`/products/${id}`);
+  return data;
+};
+
+export { fetchProducts, getProduct };

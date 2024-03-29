@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // icons
 import logo from "../assets/icons/Logo.svg";
@@ -12,23 +13,23 @@ const Navbar = () => {
   const [showLogin, setShowLogin] = useState<boolean>(false);
 
   return (
-    <div className="flex items-center justify-between bg-white h-24 mx-24">
+    <div className="flex items-center justify-between bg-white h-24 px-24 shadow-md">
       {/* logo */}
-      <div>
+      <Link to="/">
         <img src={logo} alt="ترخینه" />
-      </div>
+      </Link>
       {/* menu */}
       <div>
-        <ul className="flex text-gray_7">
+        <ul className="flex text-gray_7 text-xl">
           <li className="px-3">صفحه اصلی</li>
-          <div className="flex px-3">
+          <div className="flex px-3 gap-1">
             <li>شعبه</li>
             <img src={arrow} alt="more" />
           </div>
-          <div className="flex px-3">
+          <Link to="/menu" className="flex px-3 gap-1">
             <li>منو</li>
             <img src={arrow} alt="more" />
-          </div>
+          </Link>
           <li className="px-3">اعطای نمایندگی</li>
           <li className="px-3">درباره ما</li>
           <li className="px-3">تماس با ما</li>
@@ -42,20 +43,24 @@ const Navbar = () => {
             src={search}
             alt="جستجو"
           />
-          <img
-            className="bg-tint_1 p-2 w-10 h-10 rounded cursor-pointer"
-            src={cart}
-            alt="سبدخرید"
-          />
+          <Link to="/cart">
+            <img
+              className="bg-tint_1 p-2 w-10 h-10 rounded cursor-pointer"
+              src={cart}
+              alt="سبدخرید"
+            />
+          </Link>
           <img
             className="bg-tint_1 p-2 w-10 h-10 rounded cursor-pointer"
             src={user}
             alt="ورود / ثبت نام"
-            onClick={() => {setShowLogin(true)}}
+            onClick={() => {
+              setShowLogin(true);
+            }}
           />
         </div>
       </div>
-      {showLogin && <Login setShowLogin={setShowLogin} />}
+      {showLogin && <Login setShowLogin={setShowLogin} loggedInCart={null} />}
     </div>
   );
 };

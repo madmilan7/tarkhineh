@@ -1,4 +1,4 @@
-import fetchProducts from "../services/fetchProducts";
+import { fetchProducts } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 export type dataType = {
