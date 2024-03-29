@@ -9,7 +9,6 @@ import Cart from "./components/Cart";
 import SuccessfulPayment from "./components/SuccessfulPayment";
 // Context
 import CartProvider from "./context/CartProvider";
-import AddressForm from "./components/AddressForm";
 
 const App = () => {
   return (
