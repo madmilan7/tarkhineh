@@ -38,7 +38,7 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
   const [showAddress, setShowAddress] = useState<boolean>(false);
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [editIndex, setEditIndex] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState<string>("courier")
+  const [selectedOption, setSelectedOption] = useState<string>("courier");
 
   const handleTextChange = (e: any) => {
     const maxi: number = 200;
@@ -110,20 +110,37 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
   const handleDelete = (index: number) => {
     const updatedAddresses = addresses.filter((_, idx) => idx !== index);
     setAddresses(updatedAddresses);
-  }
+  };
 
   return (
     <div>
-      <div className="flex items-start gap-6 mx-24 pb-14">
+      <div className="flex lg:hidden items-center justify-center py-7 relative">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute right-6"
+        >
+          <path
+            d="M8.90961 20.67C8.71961 20.67 8.52961 20.6 8.37961 20.45C8.08961 20.16 8.08961 19.68 8.37961 19.39L14.8996 12.87C15.3796 12.39 15.3796 11.61 14.8996 11.13L8.37961 4.61002C8.08961 4.32002 8.08961 3.84002 8.37961 3.55002C8.66961 3.26002 9.14961 3.26002 9.43961 3.55002L15.9596 10.07C16.4696 10.58 16.7596 11.27 16.7596 12C16.7596 12.73 16.4796 13.42 15.9596 13.93L9.43961 20.45C9.28961 20.59 9.09961 20.67 8.90961 20.67Z"
+            fill="#353535"
+          />
+        </svg>
+        <h3 className="font-bold text-lg">تکمیل اطلاعات</h3>
+      </div>
+      <div className="flex flex-col lg:flex-row items-start gap-6 lg:mx-24 mx-6 pb-14">
         {/* Right side */}
-        <div className="flex flex-col w-7/12 shrink-0 gap-6">
+        <div className="flex flex-col lg:w-7/12 w-full shrink-0 gap-6">
           {/* Shipping Method */}
-          <div className="flex items-center justify-between border border-gray_4 rounded-lg px-10 py-7">
-            <div className="flex items-center gap-2">
-              <img src={truck} alt="روش ارسال" />
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between border border-gray_4 
+                          rounded-lg px-6 lg:px-10 py-3 lg:py-7">
+            <div className="flex items-center gap-2 border-b border-gray_4 lg:border-none py-3 lg:p-0">
+              <img src={truck} alt="روش ارسال" className="w-5 lg:w-7" />
               <p className="text-gray_8">روش تحویل سفارش</p>
             </div>
-            <form action="shipping-method" className="flex items-center gap-16">
+            <form action="shipping-method" className="lg:flex items-center gap-16">
               <div className="flex items-center gap-3">
                 <input
                   type="radio"
@@ -134,13 +151,13 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
                   className="w-4 h-4 appearance-none rounded-full border border-gray_4 checked:bg-success_light
                             bg-clip-content checked:p-px cursor-pointer"
                 />
-                <label htmlFor="courier" className="text-gray_7 leading-8">
+                <label htmlFor="courier" className="text-sm lg:text-base text-gray_7 leading-8">
                   ارسال توسط پیک{" "}
-                  <span className="block text-xs">
+                  <span className="hidden lg:block text-xs">
                     توسط پیک رستوران ارسال شود.
                   </span>
                 </label>
-                <img src={truckFast} alt="پیک" />
+                <img src={truckFast} alt="پیک" className="w-5 lg:w-7" />
               </div>
               <div className="flex items-center gap-3">
                 <input
@@ -152,13 +169,13 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
                   className="w-4 h-4 appearance-none rounded-full border border-gray_4 checked:bg-success_light
                              bg-clip-content checked:p-px cursor-pointer"
                 />
-                <label htmlFor="inPerson" className="text-gray_7 leading-8">
+                <label htmlFor="inPerson" className="text-sm lg:text-base text-gray_7 leading-8">
                   تحویل حضوری{" "}
-                  <span className="block text-xs">
+                  <span className="hidden lg:block text-xs">
                     توسط پیک رستوران ارسال شود.
                   </span>
                 </label>
-                <img src={shoppingBag} alt="حضوری" />
+                <img src={shoppingBag} alt="حضوری" className="w-5 lg:w-7" />
               </div>
             </form>
           </div>
@@ -167,8 +184,8 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
             {/* Header */}
             <div className="flex items-center justify-between mx-6 py-3 border-b border-gray_4">
               <div className="flex items-center gap-1">
-                <img src={location} alt="آدرس‌ها" />
-                <h3 className="text-gray_8 text-lg">آدرس‌ها</h3>
+                <img src={location} alt="آدرس‌ها" className="w-5 lg:w-7" />
+                <h3 className="text-gray_8 lg:text-lg">آدرس‌ها</h3>
               </div>
               <button
                 className="text-sm text-primary flex items-center"
@@ -185,7 +202,7 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
                   <div className="relative">
                     <p
                       className="text-gray_6 m-0 absolute top-1/2 left-1/2 whitespace-nowrap text-center
-                              -translate-x-1/2 -translate-y-1/2"
+                              -translate-x-1/2 -translate-y-1/2 text-sm lg:text-base"
                     >
                       شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!
                     </p>
@@ -205,7 +222,11 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
               </div>
             ) : (
               <div>
-                <AddressList addresses={addresses} onEdit={handleEdit} onDelete={handleDelete} />
+                <AddressList
+                  addresses={addresses}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                />
                 {showAddress && (
                   <AddressForm
                     onSubmit={handleSubmit}
@@ -221,9 +242,9 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
           {/* Description */}
           <div className="flex border border-gray_4 rounded-lg relative h-44">
             <div className="flex items-center gap-1 absolute right-6 top-4">
-              <img src={desc} alt="توضیحات" />
-              <p className="text-gray_7 text-lg">
-                توضیحات سفارش<span className="text-sm"> (اختیاری)</span>
+              <img src={desc} alt="توضیحات" className="w-5 lg:w-7" />
+              <p className="text-gray_7 lg:text-lg">
+                توضیحات سفارش<span className="text-xs lg:text-sm"> (اختیاری)</span>
               </p>
             </div>
             <textarea
@@ -231,21 +252,21 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
               onChange={handleTextChange}
               value={text}
             />
-            <div className="text-xs text-gray_4 text-end absolute -bottom-5 left-0">
+            <div className="hidden lg:block text-xs text-gray_4 text-end absolute -bottom-5 left-0">
               {toPersian(text.length)}/۲۰۰
             </div>
           </div>
         </div>
         {/* Left side */}
         <div className="border border-gray_4 rounded-lg w-full px-6 pt-2 pb-6">
-          <div className="flex items-center justify-between border-b border-gray_4 py-3">
+          <div className="hidden lg:flex items-center justify-between border-b border-gray_4 py-3">
             <p className="text-gray_8 text-lg font-semibold">
               سبد خرید ({toPersian(cart.length)})
             </p>
             <img src={trash} alt="removeAll" />
           </div>
           <div
-            className="border-b border-gray_4 py-3 max-h-56 overflow-y-scroll scrollbar"
+            className="hidden lg:block border-b border-gray_4 py-3 max-h-56 overflow-y-scroll scrollbar"
             dir="ltr"
           >
             {cart?.map((product: any) => (

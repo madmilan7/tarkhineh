@@ -11,10 +11,14 @@ interface Address {
 interface AddressFormProps {
   setShowAddress: (active: boolean) => void;
   onSubmit: (formData: Address) => void;
-  initialData? : Address;
+  initialData?: Address;
 }
 
-const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, initialData }) => {
+const AddressForm: React.FC<AddressFormProps> = ({
+  setShowAddress,
+  onSubmit,
+  initialData,
+}) => {
   const [formData, setFormData] = useState({
     addressTitle: "",
     phoneNumber: "",
@@ -25,7 +29,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, ini
     if (initialData) {
       setFormData(initialData);
     }
-  }, [initialData])
+  }, [initialData]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement> | any) => {
     const { name, value } = e.target;
@@ -44,18 +48,34 @@ const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, ini
   };
 
   return (
-    <div className="absolute top-0 right-0">
-      <div className="bg-opacity-60 backdrop-blur-sm bg-black w-full h-full fixed top-0 z-10"></div>
+    <div className="lg:absolute top-0 right-0">
+      <div className="hidden lg:block bg-opacity-60 backdrop-blur-sm bg-black w-full h-full fixed top-0 z-10"></div>
       <div
         className="bg-white flex flex-col items-center z-20 fixed top-0 bottom-0 right-0 left-0 
-                        m-auto h-32rem w-37.5rem border border-gray_4 rounded-lg overflow-hidden"
+                        m-auto lg:h-32rem lg:w-37.5rem lg:border border-gray_4 lg:rounded-lg overflow-hidden"
       >
-        <div className="flex items-center justify-center bg-gray_3 w-full py-7">
-          <h3 className="text-2xl font-semibold text-gray_8">ثبت آدرس</h3>
+        <div className="flex items-center justify-center lg:bg-gray_3 w-full py-7">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute right-6 lg:hidden"
+            onClick={() => setShowAddress(false)}
+          >
+            <path
+              d="M8.90961 20.67C8.71961 20.67 8.52961 20.6 8.37961 20.45C8.08961 20.16 8.08961 19.68 8.37961 19.39L14.8996 12.87C15.3796 12.39 15.3796 11.61 14.8996 11.13L8.37961 4.61002C8.08961 4.32002 8.08961 3.84002 8.37961 3.55002C8.66961 3.26002 9.14961 3.26002 9.43961 3.55002L15.9596 10.07C16.4696 10.58 16.7596 11.27 16.7596 12C16.7596 12.73 16.4796 13.42 15.9596 13.93L9.43961 20.45C9.28961 20.59 9.09961 20.67 8.90961 20.67Z"
+              fill="#353535"
+            />
+          </svg>
+          <h3 className="text-lg lg:text-2xl font-semibold text-gray_8">
+            ثبت آدرس
+          </h3>
           <img
             src={close}
             alt="بستن"
-            className="absolute left-6 cursor-pointer w-10"
+            className="hidden lg:block absolute left-6 cursor-pointer w-10"
             onClick={() => setShowAddress(false)}
           />
         </div>
@@ -65,13 +85,14 @@ const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, ini
             name="addressTitle"
             value={formData.addressTitle}
             onChange={handleInputChange}
-            className="outline-none border border-gray_4 rounded w-full my-6 placeholder:text-gray_7 px-4 py-2"
+            className="outline-none border border-gray_4 rounded w-full my-6 placeholder:text-gray_7 
+                        px-4 py-2 placeholder:text-sm lg:placeholder:text-base"
             placeholder="عنوان آدرس"
           />
 
           <label
             htmlFor="receiver"
-            className="text-gray_8 flex items-center gap-1"
+            className="text-gray_8 flex items-center gap-1 text-sm lg:text-base"
           >
             <input
               type="checkbox"
@@ -102,7 +123,8 @@ const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, ini
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleInputChange}
-            className="outline-none border border-gray_4 rounded w-full my-2 placeholder:text-gray_7 px-4 py-2"
+            className="outline-none border border-gray_4 rounded w-full my-2 placeholder:text-gray_7 
+                        px-4 py-2 placeholder:text-sm lg:placeholder:text-base"
             placeholder="شماره همراه"
           />
 
@@ -111,14 +133,17 @@ const AddressForm: React.FC<AddressFormProps> = ({ setShowAddress, onSubmit, ini
             value={formData.address}
             onChange={handleInputChange}
             className="outline-none border border-gray_4 rounded w-full h-44 my-2 placeholder:text-gray_7 px-4
-                        resize-none py-2"
+                        resize-none py-2 placeholder:text-sm lg:placeholder:text-base"
             placeholder="آدرس دقیق شما"
           ></textarea>
           <div className="flex items-center justify-between gap-3">
-            <button className="text-primary w-full py-2">
-              ویرایش آدرس انتخابی
+            <button
+              className="text-primary w-full py-2 text-sm lg:text-base"
+              onClick={() => setShowAddress(false)}
+            >
+              انصراف
             </button>
-            <button className="text-white bg-primary rounded w-full py-2">
+            <button className="text-white bg-primary rounded w-full py-2 text-sm lg:text-base">
               ثبت آدرس
             </button>
           </div>

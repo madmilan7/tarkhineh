@@ -21,37 +21,34 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative">
-      <div>
-        <img className="absolute w-full h-80" src={footer} alt="footer" />
-      </div>
+    <div className="bg-cover bg-center lg:h-80 lg:w-full" style={{backgroundImage: `url(${footer})`}}>
       {/* content */}
-      <div className="absolute text-white flex w-full">
-        <div className="flex items-start gap-56 pr-32 pt-8 w-1/2">
-          <div>
-            <h2 className="text-2xl pb-1.5">دسترسی آسان</h2>
-            <ul className="text-gray_3">
-              <li className="py-2.5 px-4">پرسش‌های متداول</li>
-              <li className="py-2.5 px-4">قوانین ترخینه</li>
-              <li className="py-2.5 px-4">حریم خصوصی</li>
+      <div className="text-white flex w-full">
+        <div className="flex items-start lg:gap-56 pr-8 lg:pr-32 py-8 w-full lg:w-1/2">
+          <div className="flex-1">
+            <h2 className="text-sm lg:text-2xl pb-1.5">دسترسی آسان</h2>
+            <ul className="text-gray_3 text-xs lg:text-base">
+              <li className="py-1.5 lg:py-2.5 px-4">پرسش‌های متداول</li>
+              <li className="py-1.5 lg:py-2.5 px-4">قوانین ترخینه</li>
+              <li className="py-1.5 lg:py-2.5 px-4">حریم خصوصی</li>
             </ul>
-            <div className="flex items-center gap-5 px-4 pt-2">
-              <img src={twiter} alt="توییتر" />
-              <img src={instagram} alt="اینستاگرام" />
-              <img src={telegram} alt="تلگرام" />
+            <div className="flex items-center gap-2 lg:gap-5 px-4 pt-1 lg:pt-2">
+              <img src={twiter} alt="توییتر" className="w-5 lg:w-7" />
+              <img src={instagram} alt="اینستاگرام" className="w-5 lg:w-7" />
+              <img src={telegram} alt="تلگرام" className="w-5 lg:w-7" />
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl pb-1.5">شعبه‌های ترخینه</h2>
-            <ul className="text-gray_3">
-              <li className="py-2.5 px-4">شعبه اکباتان</li>
-              <li className="py-2.5 px-4">شعبه چالوس</li>
-              <li className="py-2.5 px-4">شعبه اقدسیه</li>
-              <li className="py-2.5 px-4">شعبه ونک</li>
+          <div className="flex-1">
+            <h2 className="text-sm lg:text-2xl pb-1.5">شعبه‌های ترخینه</h2>
+            <ul className="text-gray_3 text-xs lg:text-base">
+              <li className="py-1.5 lg:py-2.5 px-4">شعبه اکباتان</li>
+              <li className="py-1.5 lg:py-2.5 px-4">شعبه چالوس</li>
+              <li className="py-1.5 lg:py-2.5 px-4">شعبه اقدسیه</li>
+              <li className="py-1.5 lg:py-2.5 px-4">شعبه ونک</li>
             </ul>
           </div>
         </div>
-        <div className="w-1/2 pt-8 pr-4">
+        <div className="w-1/2 pt-8 pr-4 hidden xl:block">
           <h2 className="text-2xl">پیام به ترخینه</h2>
           <div className="flex gap-6">
             <div className="flex flex-col gap-3 py-4 pr-3">

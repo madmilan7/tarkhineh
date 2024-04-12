@@ -8,11 +8,11 @@ const ForeignFood = () => {
   const { data } = useAllProducts();
 
   return (
-    <div>
-      <h3 className="text-2xl text-gray_8 font-semibold py-6 pr-1">
+    <div className="">
+      <h3 className="text-lg lg:text-2xl text-gray_8 font-semibold py-3 lg:py-6 pr-1">
         غذاهای غیرایرانی
       </h3>
-      <div className="flex justify-center flex-wrap gap-6 mb-6">
+      <div className="flex justify-center flex-wrap gap-6 pb-3 lg:pb-6">
         {data
           ?.filter((item) => item.category === "غذای غیرایرانی")
           .map((food) => (

@@ -23,32 +23,32 @@ const AddressList: React.FC<AddressListProps> = ({
   onDelete,
 }) => {
   return (
-    <div className="flex items-center gap-6 px-6 py-3">
+    <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6 px-6 py-3">
       {addresses.map((address, index) => (
         <div
           key={index}
-          className="flex flex-col justify-between border border-gray_4 rounded-lg bg-gray_1 w-1/2 p-3 h-28"
+          className="flex flex-col justify-between border border-gray_4 rounded-lg bg-gray_1 w-full lg:w-1/2 p-3 h-28"
         >
           <div className="flex items-start justify-between gap-3">
-            <p className="text-gray_8 font-semibold">{address.address}</p>
+            <p className="text-gray_8 text-sm lg:text-base font-semibold">{address.address}</p>
             <div className="flex items-center gap-3">
               <img
                 src={edit}
                 alt="edit"
                 onClick={() => onEdit(index)}
-                className="cursor-pointer"
+                className="cursor-pointer w-4 lg:w-6"
               />
               <img
                 src={trash}
                 alt="trash"
                 onClick={() => onDelete(index)}
-                className="cursor-pointer"
+                className="cursor-pointer w-4 lg:w-6"
               />
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-gray_7">{address.addressTitle}</p>
-            <p className="text-gray_7">{toPersian(+address.phoneNumber)}</p>
+            <p className="text-gray_7 text-sm lg:text-base">{address.addressTitle}</p>
+            <p className="text-gray_7 text-sm lg:text-base">{toPersian(+address.phoneNumber)}</p>
           </div>
         </div>
       ))}

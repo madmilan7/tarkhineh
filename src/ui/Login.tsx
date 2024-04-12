@@ -16,11 +16,11 @@ interface Input {
 }
 
 interface ShowLogin {
-  setShowLogin: any;
-  loggedInCart: any;
+  setShowLogin: (active: boolean) => void;
+  setLoggedIn?: (active: boolean) => void;
 }
 
-const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
+const Login: React.FC<ShowLogin> = ({ setShowLogin, setLoggedIn }) => {
   const [showConfirm, setShowConfirm] = useState<boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [number, setNumber] = useState<string>();
@@ -45,8 +45,10 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
 
   const handleIsLoggedIn = (value: boolean) => {
     setIsLoggedIn(value);
-    loggedInCart(true);
-  }
+    if (setLoggedIn) {
+      setLoggedIn(true);
+    }
+  };
 
   return (
     <div className="absolute top-0 right-0">
@@ -54,23 +56,29 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
       {/* Login 1 */}
       <div
         className="bg-white flex flex-col items-center z-20 fixed top-0 bottom-0 right-0 left-0 
-                        m-auto h-20rem w-26rem border border-gray_4 rounded-lg px-6 py-6"
+                        m-auto lg:max-h-80 max-w-md border border-gray_4 rounded-lg px-6 py-6"
       >
-        <img src={logo} alt="ترخینه" className="w-28" />
+        <img
+          src={logo}
+          alt="ترخینه"
+          className="w-56 lg:w-28 pt-24 pb-14 lg:p-0"
+        />
         <img
           src={close}
           alt="بستن"
           className="absolute left-6 cursor-pointer"
           onClick={closeLogin}
         />
-        <h3 className="text-lg text-gray_8 pt-5">ورود / ثبت ‌نام</h3>
-        <p className="text-sm text-gray_7 pt-1">
+        <h3 className="text-lg font-semibold lg:font-normal text-gray_8 pt-5">
+          ورود / ثبت ‌نام
+        </h3>
+        <p className="text-sm text-gray_7 py-3 lg:pt-1">
           با وارد کردن شماره موبایل کد تاییدی برای شما ارسال خواهد شد.
         </p>
         <form
           onSubmit={handleSubmit(onSubmit)}
           action="number"
-          className="pt-6 relative"
+          className="pt-6 relative w-full"
         >
           <label
             htmlFor="number"
@@ -84,7 +92,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
             type="number"
             className={`border  ${
               errors.number ? `border-error` : `border-gray_8`
-            } w-22rem h-10 rounded px-1 outline-none`}
+            } w-full h-10 rounded px-1 outline-none`}
             {...register("number", {
               required: true,
               minLength: 11,
@@ -107,7 +115,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
           )}
           <button
             type="submit"
-            className="w-full py-2 rounded text-lg mt-4 bg-primary text-white"
+            className="w-full py-2 rounded text-lg mt-7 lg:mt-4 bg-primary text-white"
           >
             ادامه
           </button>
@@ -122,7 +130,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
       {showConfirm && (
         <div
           className="bg-white z-20 fixed top-0 bottom-0 right-0 left-0
-                        m-auto h-20rem w-26rem border border-gray_4 rounded-lg px-6 py-6"
+                        m-auto max-h-screen lg:h-80 max-w-md border border-gray_4 rounded-lg px-6 py-6"
         >
           <div>
             <img
@@ -131,7 +139,11 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
               alt="بازگشت"
               onClick={comeBack}
             />
-            <img className="w-28 mx-auto" src={logo} alt="ترخینه" />
+            <img
+              className="w-56 lg:w-28 pt-24 pb-14 lg:p-0 mx-auto"
+              src={logo}
+              alt="ترخینه"
+            />
             <img
               className="absolute left-6 top-6 cursor-pointer"
               src={close}
@@ -139,11 +151,17 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, loggedInCart }) => {
               onClick={closeLogin}
             />
           </div>
-          <h3 className="text-lg text-gray_8 pt-5 text-center">کد تایید</h3>
-          <p className="text-sm text-gray_7 pt-1 text-center pb-6">
+          <h3 className="text-lg font-semibold lg:font-normal text-gray_8 pt-5 text-center">
+            کد تایید
+          </h3>
+          <p className="text-sm text-gray_7 pt-3 lg:pt-1 text-center pb-6">
             کد تایید پنج‌رقمی به شماره {"۰" + toPersian(+number)} ارسال شد.
           </p>
-          <OtpInput setShowLogin={setShowLogin} valueLength={5} loggedIn={handleIsLoggedIn} />
+          <OtpInput
+            setShowLogin={setShowLogin}
+            valueLength={5}
+            loggedIn={handleIsLoggedIn}
+          />
         </div>
       )}
     </div>

@@ -6,7 +6,7 @@ interface currentStepType {
 
 const Progress: React.FC<currentStepType> = ({ currentStep }) => {
   return (
-    <div className="flex items-center justify-center gap-2 py-12">
+    <div className="hidden lg:flex items-center justify-center gap-2 py-12">
       <div className="flex items-center gap-1">
         <svg
           width={`${currentStep === 1 ? "32" : "24"}`}

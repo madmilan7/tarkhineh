@@ -47,23 +47,24 @@ const Menu = () => {
       <Slider />
       {/* Tab */}
       <div>
-        <ul className="flex items-center gap-10 text-2xl text-gray_7 bg-gray_3 py-6 px-44">
+        <ul className="flex items-center gap-5 lg:gap-10 text-sm lg:text-2xl text-gray_7 bg-gray_3 
+                      lg:py-6 py-3 px-6 lg:px-44">
           <li className="cursor-pointer">غذای اصلی</li>
           <li className="cursor-pointer">پیش غذا</li>
           <li className="cursor-pointer">دسر</li>
           <li className="cursor-pointer">نوشیدنی</li>
         </ul>
       </div>
-      <div className="flex items-center justify-between gap-1 mt-4 relative">
+      <div className="lg:flex items-center justify-between gap-1 my-2 lg:pt-4 relative">
         <div
           ref={scrollRef}
-          className="flex items-center flex-1.5 justify-between overflow-x-auto no-scrollbar gap-2 mr-40 scroll-smooth"
+          className="flex items-center flex-1.5 justify-between overflow-x-auto no-scrollbar gap-2 mr-6 lg:mr-40 scroll-smooth"
         >
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
             {showButton && (
               <button
                 onClick={toRight}
-                className="bg-gray_1 p-1.5 rounded absolute top-1.5 right-36 z-10"
+                className="bg-gray_1 p-1.5 rounded absolute top-1.5 right-36 z-10 hidden lg:block"
               >
                 <svg
                   width="17"
@@ -79,39 +80,39 @@ const Menu = () => {
                 </svg>
               </button>
             )}
-            <p className="text-lg text-gray_8 whitespace-nowrap">
+            <p className="text-sm lg:text-lg text-gray_8 whitespace-nowrap">
               غذاهای ایرانی
             </p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
-            <p className="text-lg text-gray_8 whitespace-nowrap">
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+            <p className="text-sm lg:text-lg text-gray_8 whitespace-nowrap">
               غذاهای غیر ایرانی
             </p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
-            <p className="text-lg text-gray_8">پیتزاها</p>
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+            <p className="text-sm lg:text-lg text-gray_8">پیتزاها</p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
-            <p className="text-lg text-gray_8">ساندویچ‌ها</p>
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+            <p className="text-sm lg:text-lg text-gray_8">ساندویچ‌ها</p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
-            <p className="text-lg text-gray_8">پرفروش‌ترین</p>
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+            <p className="text-sm lg:text-lg text-gray_8">پرفروش‌ترین</p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
-          <div className="bg-gray_3 rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
-            <p className="text-lg text-gray_8">اقتصادی‌ترین</p>
+          <div className="bg-gray_3 rounded-lg lg:rounded-3xl px-2 py-1 flex flex-shrink-0 items-center gap-1 cursor-pointer">
+            <p className="text-sm lg:text-lg text-gray_8">اقتصادی‌ترین</p>
             <img src={arrowLeft} alt="arrowLeft" />
           </div>
         </div>
         {/* search */}
-        <div className="ml-44 flex-1 relative">
+        <div className="lg:ml-44 px-6 lg:p-0 pt-4 flex-1 relative">
           <button
             onClick={toLeft}
-            className="bg-gray_1 p-1.5 rounded absolute top-1.5 -right-4 z-10"
+            className="bg-gray_1 p-1.5 rounded absolute top-1.5 -right-4 z-10 hidden lg:block"
           >
             <svg
               width="17"
@@ -128,14 +129,14 @@ const Menu = () => {
           </button>
           <input
             type="text"
-            className="outline-none border w-full h-10 border-gray_4 rounded-lg
+            className="outline-none border w-full h-10 border-gray_4 rounded lg:rounded-lg
                         placeholder:text-xs placeholder:text-gray_8 px-5 placeholder:font-semibold"
             placeholder="جستجو"
           />
-          <img src={search} alt="search" className="absolute left-4 top-2" />
+          <img src={search} alt="search" className="absolute left-12 lg:left-4 top-6 lg:top-2" />
         </div>
       </div>
-      <div className="mx-44">
+      <div className="lg:mx-44 mx-6">
         <PersianFood />
         <ForeignFood />
         <Pizzas />

@@ -14,9 +14,9 @@ interface OtpType {
   password: string;
 }
 interface Prop {
-  setShowLogin: any;
+  setShowLogin: (active: boolean) => void;
   valueLength: number;
-  loggedIn: any;
+  loggedIn: (active: boolean) => void;
 }
 
 const OtpInput: React.FC<Prop> = ({ setShowLogin, valueLength, loggedIn }) => {

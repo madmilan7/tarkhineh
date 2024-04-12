@@ -29,10 +29,15 @@ module.exports = {
         down: {
           "0%": {top: "-100%"},
           "100%": {top: "-112px"}
+        },
+        down2: {
+          "0%": {top: "-100%"},
+          "100%": {top: "40px"}
         }
       },
       animation: {
-        "uptodown": "down 1s .3s ease"
+        "uptodown": "down 1s .3s ease",
+        "uptodown2": "down2 1s .3s ease"
       },
       boxShadow: {
         "bank": " 0 0 5px #7CBC91"
