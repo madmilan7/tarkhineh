@@ -7,17 +7,22 @@ import heart from "../assets/icons/Heart.svg";
 import { toPersian } from "../utils/toPersian";
 // Context
 import { CartContext } from "../context/CartProvider";
+// Types
+import { dataType } from "../@types/assets/types";
 
-const Card: React.FC<any> = ({ data }) => {
+interface PropsType {
+  data: dataType;
+}
+
+const Card: React.FC<PropsType> = ({ data }) => {
   const { title, image, description, price, discount } = data;
 
   const { cart, setCart } = useContext(CartContext);
 
   const addToCart = () => {
-    if (!cart?.find((item: any) => item.id === data.id)) {
+    if (!cart?.find((item) => item.id === data.id)) {
       setCart([...cart, { ...data, quantity: 1 }]);
     }
-    console.log(cart);
   };
 
   const newPrice: number = price - price * (discount / 100);
@@ -46,8 +51,10 @@ const Card: React.FC<any> = ({ data }) => {
           />
         </div>
         <div className="flex items-center justify-between gap-3">
-          <p className="text-xs md:text-sm lg:text-base text-gray_8 overflow-hidden text-ellipsis 
-                        whitespace-nowrap md:whitespace-normal w-36 md:w-full">
+          <p
+            className="text-xs md:text-sm lg:text-base text-gray_8 overflow-hidden text-ellipsis 
+                        whitespace-nowrap md:whitespace-normal w-36 md:w-full"
+          >
             {description}
           </p>
           {/* price & discount */}

@@ -16,6 +16,8 @@ import user from "../assets/icons/user2.svg";
 import left from "../assets/icons/Left-Arrow.svg";
 // Context
 import { CartContext } from "../context/CartProvider";
+// Types
+import { dataType } from "../@types/assets/types";
 
 interface stepType {
   onNextStep: () => void;
@@ -30,9 +32,9 @@ const CartContent: React.FC<stepType> = ({ onNextStep }) => {
   const totalPrice = calculateTotalPrice(cart);
   const totalPriceAfterDiscount = totalPrice - totalDiscount;
 
-  const increase = (data: any) => {
+  const increase = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id) {
           return {
             ...item,
@@ -43,9 +45,9 @@ const CartContent: React.FC<stepType> = ({ onNextStep }) => {
       })
     );
   };
-  const decrease = (data: any) => {
+  const decrease = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id && item.quantity > 1) {
           return {
             ...item,
@@ -56,8 +58,8 @@ const CartContent: React.FC<stepType> = ({ onNextStep }) => {
       })
     );
   };
-  const removeFromCart = (data: any) => {
-    const newCart: any = cart?.filter((item: any) => item.id !== data.id);
+  const removeFromCart = (data: dataType) => {
+    const newCart: any = cart?.filter((item) => item.id !== data.id);
     setCart([...newCart]);
   };
 

@@ -13,7 +13,7 @@ const Footer = () => {
   const maxi: number = 200;
   const [text, setText] = useState<string>("");
 
-  const handleTextChange = (e: any) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value.length <= maxi) {
       setText(value);
@@ -76,7 +76,7 @@ const Footer = () => {
                 className="bg-transparent border border-gray_7 rounded placeholder:text-gray_1 resize-none
                             px-4 pt-3 w-80 h-full placeholder:text-sm placeholder:absolute placeholder:top-3"
                 placeholder="پیام شما"
-                onChange={handleTextChange}
+                onChange={() => handleTextChange}
                 value={text}
               />
               <div className="text-xs text-gray_1 text-end">

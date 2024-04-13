@@ -1,15 +1,8 @@
 import { fetchProducts } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
-export type dataType = {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  category: string;
-  price: number;
-  discount: number;
-};
+// Types 
+import { dataType } from "../@types/assets/types";
 
 const useAllProducts = () => {
   return useQuery<dataType[], Error>({

@@ -6,27 +6,21 @@ import { toPersian } from "../utils/toPersian";
 // Icons
 import trash from "../assets/icons/trash.svg";
 import { CartContext } from "../context/CartProvider";
+// Types
+import { dataType } from "../@types/assets/types";
 
-interface productType {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  category: string;
-  price: number;
-  discount: number;
-  quantity: number;
+interface PropsType {
+  data: dataType;
 }
-[];
 
-const ShoppingCard: React.FC<any> = ({ data }) => {
+const ShoppingCard: React.FC<PropsType> = ({ data }) => {
   const { cart, setCart } = useContext(CartContext);
 
   const newPrice: number = data.price - data.price * (data.discount / 100);
 
   const increase = () => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id) {
           return {
             ...item,
@@ -39,7 +33,7 @@ const ShoppingCard: React.FC<any> = ({ data }) => {
   };
   const decrease = () => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id && item.quantity > 1) {
           return {
             ...item,
@@ -51,7 +45,7 @@ const ShoppingCard: React.FC<any> = ({ data }) => {
     );
   };
   const removeFromCart = () => {
-    const newCart: any = cart?.filter((item: any) => item.id !== data.id);
+    const newCart: any = cart?.filter((item) => item.id !== data.id);
     setCart([...newCart]);
   };
 

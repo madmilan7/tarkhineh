@@ -22,14 +22,11 @@ import {
 import { toPersian } from "../utils/toPersian";
 // Context
 import { CartContext } from "../context/CartProvider";
+// Types
+import { Address, dataType } from "../@types/assets/types";
 
 interface stepType {
   onNextStep: () => void;
-}
-interface Address {
-  addressTitle: string;
-  phoneNumber: string;
-  address: string;
 }
 
 const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
@@ -40,7 +37,7 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [selectedOption, setSelectedOption] = useState<string>("courier");
 
-  const handleTextChange = (e: any) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const maxi: number = 200;
     const value = e.target.value;
     if (value.length <= maxi) {
@@ -52,9 +49,9 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
   const totalPrice = calculateTotalPrice(cart);
   const totalPriceAfterDiscount = totalPrice - totalDiscount;
 
-  const increase = (data: any) => {
+  const increase = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id) {
           return {
             ...item,
@@ -65,9 +62,9 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
       })
     );
   };
-  const decrease = (data: any) => {
+  const decrease = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id && item.quantity > 1) {
           return {
             ...item,
@@ -78,8 +75,8 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
       })
     );
   };
-  const removeFromCart = (data: any) => {
-    const newCart: any = cart?.filter((item: any) => item.id !== data.id);
+  const removeFromCart = (data: dataType) => {
+    const newCart: any = cart?.filter((item) => item.id !== data.id);
     setCart([...newCart]);
   };
   const addAddress = () => {
@@ -249,7 +246,7 @@ const CheckOutInformation: React.FC<stepType> = ({ onNextStep }) => {
             </div>
             <textarea
               className="w-full h-full outline-none rounded-lg pr-60 resize-none pt-4"
-              onChange={handleTextChange}
+              onChange={() => handleTextChange}
               value={text}
             />
             <div className="hidden lg:block text-xs text-gray_4 text-end absolute -bottom-5 left-0">

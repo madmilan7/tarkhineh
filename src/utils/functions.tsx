@@ -1,4 +1,6 @@
-export const calculateTotalDiscount = (items: any) => {
+import { dataType } from "../@types/assets/types";
+
+export const calculateTotalDiscount = (items: dataType[]) => {
   let totalDiscount = 0;
 
   items.forEach((item: any) => {
@@ -8,7 +10,7 @@ export const calculateTotalDiscount = (items: any) => {
   return totalDiscount;
 };
 
-export const calculateTotalPrice = (items: any) => {
+export const calculateTotalPrice = (items: dataType[]) => {
   let totalPrice = 0;
 
   items.forEach((item: any) => {

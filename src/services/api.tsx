@@ -9,7 +9,7 @@ const fetchProducts = async () => {
   return data;
 };
 
-const getProduct = async (id: any) => {
+const getProduct = async (id: number) => {
   const { data } = await client.get(`/products/${id}`);
   return data;
 };

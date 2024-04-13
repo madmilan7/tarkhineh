@@ -5,12 +5,9 @@ import edit from "../assets/icons/edit-2.svg";
 import trash from "../assets/icons/trash.svg";
 //Function
 import { toPersian } from "../utils/toPersian";
+// Types
+import { Address } from "../@types/assets/types";
 
-interface Address {
-  addressTitle: string;
-  phoneNumber: string;
-  address: string;
-}
 interface AddressListProps {
   addresses: Address[];
   onEdit: (index: number) => void;

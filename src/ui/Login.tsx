@@ -22,7 +22,7 @@ interface ShowLogin {
 
 const Login: React.FC<ShowLogin> = ({ setShowLogin, setLoggedIn }) => {
   const [showConfirm, setShowConfirm] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [_, setIsLoggedIn] = useState<boolean>(false);
   const [number, setNumber] = useState<string>();
 
   const {

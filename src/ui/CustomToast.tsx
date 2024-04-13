@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 import error from "../assets/icons/Close-icon-red.svg";
 
 interface PropsType {
-  showToast: any;
-  setShowToast: any;
+  showToast: boolean;
+  setShowToast: (active: boolean) => void;
 }
 
 const CustomToast: React.FC<PropsType> = ({ showToast, setShowToast }) => {

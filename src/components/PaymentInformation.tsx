@@ -20,6 +20,8 @@ import {
 import { toPersian } from "../utils/toPersian";
 // Context
 import { CartContext } from "../context/CartProvider";
+// Types
+import { dataType } from "../@types/assets/types";
 
 const PaymentInformation = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -35,9 +37,9 @@ const PaymentInformation = () => {
   const totalPrice = calculateTotalPrice(cart);
   const totalPriceAfterDiscount = totalPrice - totalDiscount;
 
-  const increase = (data: any) => {
+  const increase = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id) {
           return {
             ...item,
@@ -48,9 +50,9 @@ const PaymentInformation = () => {
       })
     );
   };
-  const decrease = (data: any) => {
+  const decrease = (data: dataType) => {
     setCart(
-      cart?.map((item: any) => {
+      cart?.map((item) => {
         if (item.id === data.id && item.quantity > 1) {
           return {
             ...item,
@@ -61,11 +63,11 @@ const PaymentInformation = () => {
       })
     );
   };
-  const removeFromCart = (data: any) => {
-    const newCart: any = cart?.filter((item: any) => item.id !== data.id);
+  const removeFromCart = (data: dataType) => {
+    const newCart: any = cart?.filter((item) => item.id !== data.id);
     setCart([...newCart]);
   };
-  const handleImageClick = (id: any) => {
+  const handleImageClick = (id: number) => {
     setSelectedBank(id);
   };
 
@@ -235,7 +237,7 @@ const PaymentInformation = () => {
             className="hidden lg:block border-b border-gray_4 py-3 max-h-56 overflow-y-scroll scrollbar"
             dir="ltr"
           >
-            {cart?.map((product: any) => (
+            {cart?.map((product) => (
               <div
                 key={product.id}
                 className="flex items-center justify-between odd:bg-gray_1 even:bg-gray_3 p-2"

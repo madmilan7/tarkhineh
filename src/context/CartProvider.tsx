@@ -1,9 +1,15 @@
-import React, { createContext, useState } from "react";
+import React, { ReactNode, createContext, useState } from "react";
+import { dataType } from "../@types/assets/types";
 
-export const CartContext = createContext<any>([]);
+interface ContextType {
+  cart: dataType[];
+  setCart: (product: dataType[]) => void;
+}
 
-const CartProvider = ({ children }: any) => {
-  const [cart, setCart] = useState<any[]>([]);
+export const CartContext = createContext<ContextType | undefined>(undefined);
+
+const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [cart, setCart] = useState<dataType[]>([]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>

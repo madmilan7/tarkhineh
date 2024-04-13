@@ -8,7 +8,7 @@ const ShoppingCards:React.FC = () => {
   const { cart } = useContext(CartContext);
   return (
     <div>
-      {cart?.map((item: any) => (
+      {cart?.map((item) => (
         <ShoppingCard key={item.id} data={item} />
       ))}
     </div>

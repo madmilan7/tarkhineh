@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 
 // Icons
 import close from "../assets/icons/Close icon.svg";
+// Types
+import { Address } from "../@types/assets/types";
 
-interface Address {
-  addressTitle: string;
-  phoneNumber: string;
-  address: string;
-}
 interface AddressFormProps {
   setShowAddress: (active: boolean) => void;
   onSubmit: (formData: Address) => void;

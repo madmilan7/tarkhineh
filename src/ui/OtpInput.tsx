@@ -13,13 +13,13 @@ import CustomToast from "./CustomToast";
 interface OtpType {
   password: string;
 }
-interface Prop {
+interface PropsType {
   setShowLogin: (active: boolean) => void;
   valueLength: number;
   loggedIn: (active: boolean) => void;
 }
 
-const OtpInput: React.FC<Prop> = ({ setShowLogin, valueLength, loggedIn }) => {
+const OtpInput: React.FC<PropsType> = ({ setShowLogin, valueLength, loggedIn }) => {
   const [otp, setOtp] = useState<string[]>(new Array(valueLength).fill(""));
   const [seconds, setSeconds] = useState<number>(120);
   const otpInputs = useRef([]);
