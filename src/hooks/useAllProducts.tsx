@@ -8,6 +8,7 @@ const useAllProducts = () => {
   return useQuery<dataType[], Error>({
     queryKey: ["products"],
     queryFn: fetchProducts,
+    refetchOnMount: false,
   });
 };
 

@@ -5,7 +5,11 @@ import useAllProducts from "../hooks/useAllProducts";
 import Card from "../ui/Card";
 
 const ForeignFood = () => {
-  const { data } = useAllProducts();
+  const { data, isPending, isError } = useAllProducts();
+
+  if (isPending) return <h1>درحال دریافت ...</h1>;
+
+  if (isError) return <h3>مشکلی وجود دارد</h3>;
 
   return (
     <div className="">
