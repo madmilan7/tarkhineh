@@ -118,8 +118,8 @@ const PaymentInformation = () => {
               <img src={money} alt="روش پرداخت" className="w-5 lg:w-7" />
               <p className="text-gray_8 font-semibold lg:font-normal lg:text-lg">روش پرداخت</p>
             </div>
-            <form action="shipping-method" className="flex items-center justify-around gap-16 py-4">
-              <div className="flex items-center gap-3">
+            <form action="shipping-method" className="flex items-center justify-around gap-8 lg:gap-16 py-4">
+              <div className="flex items-center gap-1 lg:gap-3">
                 <input
                   type="radio"
                   name="shipping-method"
@@ -137,7 +137,7 @@ const PaymentInformation = () => {
                 </label>
                 <img src={pos} alt="پرداخت اینترنتی" />
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1 lg:gap-3">
                 <input
                   type="radio"
                   name="shipping-method"
