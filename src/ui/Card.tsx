@@ -29,17 +29,17 @@ const Card: React.FC<PropsType> = ({ data }) => {
 
   return (
     <div
-      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-24 lg:h-card
+      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-20 lg:h-card
                     lg:hover:shadow-md group"
     >
-      <div className="lg:shrink-0">
+      <div className="shrink-0">
         <img
-          className="lg:h-card h-24 w-20 md:w-full object-cover"
+          className="lg:h-card h-20 w-16 md:w-full object-cover"
           src={image}
           alt="خوشمزه س"
         />
       </div>
-      <div className="flex flex-col justify-between px-2 lg:pl-4 pb-1.5 pt-3 lg:pr-8 w-full">
+      <div className="flex flex-col justify-between px-2 lg:pl-4 pb-1.5 pt-3 lg:pr-8 w-full flex-1">
         <div className="flex items-center justify-between">
           <h3 className="text-base lg:text-xl lg:font-semibold text-gray_8">
             {title}
