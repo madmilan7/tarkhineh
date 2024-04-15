@@ -29,12 +29,12 @@ const Card: React.FC<PropsType> = ({ data }) => {
 
   return (
     <div
-      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-28 lg:h-card
+      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-24 lg:h-card
                     lg:hover:shadow-md group"
     >
       <div className="shrink-0">
         <img
-          className="lg:h-card h-28 w-24 md:w-full object-cover"
+          className="lg:h-card h-24 w-20 md:w-full object-cover"
           src={image}
           alt="خوشمزه س"
         />
