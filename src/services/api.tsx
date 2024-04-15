@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: "https://tarkhin.netlify.app/",
+  baseURL: "https://tarkhineh-1.vercel.app/",
 });
 
 const fetchProducts = async () => {
