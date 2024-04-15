@@ -7,11 +7,11 @@ import Card from "../ui/Card";
 import cart from "../assets/icons/shopping-cart.svg";
 
 const PersianFood = () => {
-  const { data, isPending, isError } = useAllProducts();
+  const { data, isPending, isError, error } = useAllProducts();
 
   if (isPending) return <h1>درحال دریافت ...</h1>;
 
-  if (isError) return <h3>مشکلی وجود دارد</h3>;
+  if (isError) return <h3>مشکلی وجود دارد {error.message}</h3>;
 
   return (
     <div className="py-3 lg:py-6">
