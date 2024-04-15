@@ -52,7 +52,7 @@ const Login: React.FC<ShowLogin> = ({ setShowLogin, setLoggedIn }) => {
 
   return (
     <div className="absolute top-0 right-0">
-      <div className="bg-opacity-60 backdrop-blur-sm bg-black w-full h-full fixed top-0 z-10"></div>
+      <div className="bg-opacity-60 backdrop-blur-sm bg-black w-full h-full fixed top-0 z-20"></div>
       {/* Login 1 */}
       <div
         className="bg-white flex flex-col items-center z-20 fixed top-0 bottom-0 right-0 left-0 

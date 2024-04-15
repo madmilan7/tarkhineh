@@ -18,7 +18,7 @@ const SuccessfulPayment = () => {
           پرداخت شما با موفقیت انجام شد!
         </h3>
         <p className="text-primary text-sm lg:text-lg">کد رهگیری سفارش شما: ۲۱۵۴۹۰۱۹</p>
-        <div className="flex items-center gap-3 pt-10 lg:p-0">
+        <div className="flex items-center gap-3 px-3 pt-10 lg:p-0">
           <button className="border border-primary rounded text-sm lg:text-base text-primary w-48 py-1.5">
             بازگشت به صفحه اصلی
           </button>
