@@ -32,7 +32,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
       className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-24 lg:h-card
                     lg:hover:shadow-md group"
     >
-      <div className="shrink-0">
+      <div className="lg:shrink-0">
         <img
           className="lg:h-card h-24 w-20 md:w-full object-cover"
           src={image}
