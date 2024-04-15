@@ -29,12 +29,12 @@ const Card: React.FC<PropsType> = ({ data }) => {
 
   return (
     <div
-      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-28 lg:h-card
+      className="flex border border-gray_4 rounded-lg overflow-hidden w-card h-32 lg:h-card
                     lg:hover:shadow-md group"
     >
       <div className="shrink-0">
         <img
-          className="lg:h-card h-28 w-24 md:w-full object-cover"
+          className="lg:h-card h-32 w-28 md:w-full object-cover"
           src={image}
           alt="خوشمزه س"
         />
@@ -53,7 +53,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
         <div className="flex items-center justify-between gap-3">
           <p
             className="text-xs md:text-sm lg:text-base text-gray_8 overflow-hidden text-ellipsis 
-                        whitespace-nowrap md:whitespace-normal w-36 md:w-full"
+                        whitespace-nowrap md:whitespace-normal w-32 md:w-full"
           >
             {description}
           </p>
@@ -95,7 +95,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
             />
           </div>
           <button
-            className="bg-primary text-xs md:text-sm lg:text-base text-white px-4 lg:px-14 py-2 rounded"
+            className="bg-primary text-xs md:text-sm lg:text-base text-white px-2 lg:px-14 py-2 rounded"
             onClick={addToCart}
           >
             افزودن به سبد خرید
