@@ -53,7 +53,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
         <div className="flex items-center justify-between gap-3">
           <p
             className="text-xs md:text-sm lg:text-base text-gray_8 overflow-hidden text-ellipsis 
-                        whitespace-nowrap md:whitespace-normal w-32 md:w-full"
+                        whitespace-nowrap md:whitespace-normal w-28 md:w-full"
           >
             {description}
           </p>
@@ -76,8 +76,8 @@ const Card: React.FC<PropsType> = ({ data }) => {
         </div>
         {/* button & rate */}
         <div className="flex items-center justify-between">
-          <img src={heart} alt="heart" className="lg:hidden w-5" />
-          <div className="md:hidden">
+          <img src={heart} alt="heart" className="lg:hidden w-4" />
+          <div className="md:hidden scale-75">
             <Rating
               name="half-rating"
               defaultValue={5}
