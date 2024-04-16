@@ -77,7 +77,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
         {/* button & rate */}
         <div className="flex items-center justify-between">
           <img src={heart} alt="heart" className="lg:hidden w-4" />
-          <div className="md:hidden scale-75">
+          <div className="md:hidden scale-90">
             <Rating
               name="half-rating"
               defaultValue={5}
@@ -95,7 +95,7 @@ const Card: React.FC<PropsType> = ({ data }) => {
             />
           </div>
           <button
-            className="bg-primary text-xs md:text-sm lg:text-base text-white px-2 lg:px-14 py-2 rounded"
+            className="bg-primary text-xs md:text-sm lg:text-base text-white px-2 lg:px-14 py-2 rounded scale-75 md:scale-100"
             onClick={addToCart}
           >
             افزودن به سبد خرید

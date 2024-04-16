@@ -12,7 +12,7 @@ const SuccessfulPayment = () => {
     <div>
       <Navbar />
       {/* Content */}
-      <div className="flex flex-col items-center py-28 lg:py-12 gap-5 lg:gap-10 relative overflow-hidden">
+      <div className="flex flex-col items-center py-28 lg:py-12 gap-5 lg:gap-10 relative overflow-hidden px-6 lg:p-0">
         <img src={success} alt="پرداخت با موفقیت" className="w-40 lg:w-72" />
         <h3 className="lg:text-4xl font-bold text-primary">
           پرداخت شما با موفقیت انجام شد!
