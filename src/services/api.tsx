@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: "https://tarkhineh-1.vercel.app/",
+  // baseURL: "https://tarkhineh-1.vercel.app/",
+  baseURL: "https://tarkhineh1.liara.run/",
 });
 
 const fetchProducts = async () => {
